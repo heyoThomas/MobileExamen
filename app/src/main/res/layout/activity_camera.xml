@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/surface_bg"
+    android:orientation="vertical"
+    tools:context=".CameraActivity">
+
+    <include layout="@layout/include_toolbar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/navy_container"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="0dp">
+
+            <ImageView
+                android:id="@+id/imageViewPreview"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/photo_height_form"
+                android:contentDescription="Voorbeeld foto"
+                android:scaleType="centerCrop" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonRetake"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Andere foto maken"
+            android:visibility="gone"
+            app:icon="@drawable/ic_camera" />
+
+        <TextView
+            android:id="@+id/textLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:text="Locatie wordt bepaald..."
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp"
+            app:drawableStartCompat="@drawable/ic_location"
+            app:drawableTint="@color/text_secondary" />
+
+            <LinearLayout
+                android:id="@+id/layoutInputFields"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilMonteur"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Naam monteur">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextMonteur"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName|textCapWords" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilCategorie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:hint="Categorie">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextCategorie"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text|textCapSentences" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilBeschrijving"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:hint="Beschrijving van het defect">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextBeschrijving"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:inputType="textMultiLine|textCapSentences"
+                    android:minLines="3" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="8dp"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonTerug"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:text="Annuleren" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonOpslaan"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="2"
+            android:enabled="false"
+            android:text="Melding opslaan" />
+    </LinearLayout>
+
+</LinearLayout>

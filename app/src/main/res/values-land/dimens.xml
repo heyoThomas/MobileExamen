@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="photo_height_detail">150dp</dimen>
+    <dimen name="photo_height_form">200dp</dimen>
+</resources>

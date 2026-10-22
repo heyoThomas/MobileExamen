@@ -1,0 +1,5 @@
+<resources>
+    <!-- Hoogte van de foto op het detailscherm en in het cameraformulier -->
+    <dimen name="photo_height_detail">240dp</dimen>
+    <dimen name="photo_height_form">220dp</dimen>
+</resources>
